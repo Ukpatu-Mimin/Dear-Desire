@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Press Start ❤️</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+
+
+<style>
+body {
+  font-family: 'Poppins', sans-serif;
+}
+h1, h2 {
+  font-family: 'Playfair Display', serif;
+}
+
+.screen {
+  display: none;
+  min-height: 100vh;
+}
+
+.active {
+  display: flex;
+}
+
+.fade-in {
+  animation: fade 1s ease-in-out;
+}
+
+@keyframes fade {
+  from {opacity:0; transform: translateY(20px);}
+  to {opacity:1; transform: translateY(0);}
+}
+</style>
+</head>
+
+<body class="bg-rose-50 text-rose-900 ">
+
+<!-- Background Music -->
+<audio id="bgMusic" loop>
+  <source src="constellations .mp4" type="audio/mp3">
+</audio>
+
+<!-- Progress Bar -->
+<div class="fixed top-0 left-0 w-full h-2 bg-pink-200">
+  <div id="progress" class="h-2 bg-pink-500 transition-all duration-500" style="width:0%"></div>
+</div>
+
+<!-- SCREEN 1 -->
+<div id="screen1" class="screen active items-center justify-center text-center flex-col fade-in">
+
+  <h1 class="text-4xl md:text-6xl mb-6">
+    Player Mimin has entered your heart… ❤️
+  </h1>
+
+  <button onclick="startGame()" 
+  class="bg-pink-500 hover:bg-pink-600 text-white px-8 py-3 rounded-full shadow-lg transition">
+    Press Start
+  </button>
+
+</div>
+
+<!-- LEVEL 1 -->
+<div id="screen2" class="screen items-center justify-center text-center flex-col px-6 fade-in">
+
+  <h2 class="text-4xl mb-6">Level 1: How We Met</h2>
+  <p class="max-w-xl text-xl mb-6">
+    The day we met didn’t feel loud.  
+    It felt right.  
+    And somehow… everything started shifting.
+    Conversations became more than just words.  
+    They became moments I replay in my head, and now you're stuck there living rent free.
+  </p>
+
+  <button onclick="nextLevel(25,3)" 
+  class="bg-pink-500 text-white px-6 py-2 rounded-full">
+    Continue ❤️
+  </button>
+
+</div>
+
+<!-- LEVEL 2 -->
+<div id="screen3" class="screen items-center justify-center text-center flex-col px-6 fade-in">
+
+  <h2 class="text-4xl mb-6">Level 2: Why I Chose You</h2>
+  <p class="max-w-xl text-xl mb-6">
+    I chose you because you’re soft in ways  
+    the world doesn’t get to see.  
+    Because you love intentionally.  
+    Because you choose me too.
+  </p>
+
+  <button onclick="nextLevel(50,4)" 
+  class="bg-pink-500 text-white px-6 py-2 rounded-full">
+    Continue ❤️
+  </button>
+
+</div>
+
+<!-- LEVEL 3 -->
+<div id="screen4" class="screen items-center justify-center text-center flex-col px-6 fade-in">
+
+  <h2 class="text-4xl mb-6">Level 3: Future With You</h2>
+  <p class="max-w-xl text-xl mb-6">
+    I see growth.  
+    I see laughter.  
+    I see building something beautiful together.  
+    And I want all of it with you.
+    Marry me already?
+  </p>
+
+  <button onclick="nextLevel(75,5)" 
+  class="bg-pink-500 text-white px-6 py-2 rounded-full">
+    Final Level ❤️
+  </button>
+
+</div>
+
+<!-- FINAL LEVEL -->
+<div id="screen5" class="screen items-center justify-center text-center flex-col px-6 fade-in">
+
+  <h2 class="text-5xl mb-6">Final Level ❤️</h2>
+
+  <p class="max-w-xl text-2xl mb-8">
+    I choose you.  
+    Not just today.  
+    Not just because it's Valentine’s.  
+    I choose you in every version of life.
+  </p>
+
+  <button onclick="nextLevel(100,6)" 
+  class="bg-pink-600 text-white px-8 py-3 rounded-full shadow-lg">
+    Will you keep being my Valentine?
+  </button>
+
+</div>
+
+
+<!-- SCREEN 6 SCRAPBOOK -->
+<div id="screen6" class="screen items-start justify-start flex-col px-6 py-16 overflow-y-auto bg-rose-50 fade-in">
+
+  <h2 class="text-4xl mb-12 text-center w-full">
+    Our Little Love Story 📖✨
+  </h2>
+
+  <!-- PHOTO GRID -->
+  <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+
+    <!-- IMAGE 1 -->
+    <div class="bg-white p-4 shadow-xl rotate-[-2deg] hover:rotate-0 transition duration-500">
+      <img src="pic3.jpeg" class="w-full h-80 object-cover">
+      <p class="mt-3 text-center text-sm">Our Beginning 🤍</p>
+    </div>
+
+    <!-- IMAGE 2 -->
+    <div class="bg-white p-4 shadow-xl rotate-[2deg] hover:rotate-0 transition duration-500">
+      <img src="pic2.jpeg" class="w-full h-80 object-cover">
+      <p class="mt-3 text-center text-sm">Moments I Replay</p>
+    </div>
+
+    <!-- IMAGE 3 -->
+    <div class="bg-white p-4 shadow-xl rotate-[1deg] hover:rotate-0 transition duration-500">
+      <img src="pic1.jpeg" class="w-full h-80 object-cover">
+      <p class="mt-3 text-center text-sm">You Being Soft</p>
+    </div>
+
+    <!-- IMAGE 4 -->
+    <div class="bg-white p-4 shadow-xl rotate-[-1deg] hover:rotate-0 transition duration-500">
+      <img src="pic4.jpeg" class="w-full h-80 object-cover">
+      <p class="mt-3 text-center text-sm">Future With You</p>
+    </div>
+
+  </div>
+
+  <!-- VIDEO SECTION -->
+  <div class="mt-16 max-w-4xl mx-auto space-y-10">
+
+    <div class="shadow-2xl rounded-xl overflow-hidden">
+      <video controls class="w-full">
+        <source src="video1.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="shadow-2xl rounded-xl overflow-hidden">
+      <video controls class="w-full">
+        <source src="video2.mp4" type="video/mp4">
+      </video>
+    </div>
+
+  </div>
+
+<div class="mt-16 text-center">
+  <button onclick="openLetter()" 
+  class="bg-pink-600 text-white px-8 py-3 rounded-full shadow-lg hover:bg-pink-700 transition">
+    Open My Heart 💌
+  </button>
+</div>
+
+
+  <!-- PLAYFUL SECTION -->
+  <div class="mt-20 text-center">
+    <h3 class="text-3xl mb-6">Why You're Not Escaping Me 😂❤️</h3>
+
+    <ul class="space-y-2 text-lg mb-6">
+      <li>• You pressed Start.</li>
+      <li>• You completed all levels.</li>
+      <li>• You’re already emotionally invested.</li>
+    </ul>
+
+    <button onclick="fakeExit()" 
+      class="bg-rose-700 text-white px-6 py-2 rounded-full hover:bg-rose-900 transition">
+      Leave Website
+    </button>
+
+  </div>
+
+</div>
+
+<!-- LOVE LETTER MODAL -->
+<div id="loveLetter" class="fixed inset-0 bg-black bg-opacity-70 hidden items-center justify-center z-50">
+
+  <div class="bg-white max-w-2xl mx-6 p-10 rounded-2xl shadow-2xl overflow-y-auto max-h-[80vh]">
+
+    <h2 class="text-3xl mb-6 text-center">To My Favorite Person ❤️</h2>
+
+    <p class="leading-relaxed space-y-4 text-lg">
+      If I could pause time, I’d pause it in the quiet moments with you.  
+      The soft conversations. The laughter that feels effortless.  
+      The way you pretend to be calm while your heart is actually so full.
+
+      You love in a way that feels intentional.  
+      Safe. Warm. Real.
+
+      You don’t just say you care.  
+      You show up. You listen. You protect. You build.
+
+      And in a world that moves so fast,  
+      you feel like home.
+
+      I don’t just want moments with you.  
+      I want growth. I want memories. I want forever-type conversations.
+
+      If love were a constellation,  
+      you’d be the brightest one in my sky.
+
+      And I would choose you —  
+      again.  
+      and again.  
+      and again.
+    </p>
+
+    <div class="text-center mt-8">
+      <button onclick="closeLetter()" 
+      class="bg-rose-700 text-white px-6 py-2 rounded-full hover:bg-rose-900 transition">
+        Close 💞
+      </button>
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<script>
+function showScreen(id) {
+  document.querySelectorAll(".screen").forEach(s => s.classList.remove("active"));
+  document.getElementById("screen"+id).classList.add("active");
+}
+
+function nextLevel(progressPercent, nextScreen) {
+  document.getElementById("progress").style.width = progressPercent + "%";
+  showScreen(nextScreen);
+}
+
+function startGame() {
+  document.getElementById("bgMusic").play();
+  nextLevel(10,2);
+}
+
+function fakeExit() {
+  alert("Are you sure you want to stop loving me? 😂❤️\n\nOption unavailable.");
+}
+
+function openLetter() {
+  document.getElementById("loveLetter").classList.remove("hidden");
+  document.getElementById("loveLetter").classList.add("flex");
+}
+
+function closeLetter() {
+  document.getElementById("loveLetter").classList.add("hidden");
+  document.getElementById("loveLetter").classList.remove("flex");
+}
+
+</script>
+
+</body>
+</html>
